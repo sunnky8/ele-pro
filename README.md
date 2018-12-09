@@ -1,23 +1,32 @@
 # ele-pro
-基于`element-ui`以及`ant-design`实现的响应式admin后台
+基于[element-ui](https://ant.design/)以及[ant-design](http://element-cn.eleme.io)实现的响应式admin后台
+Responsive admin background based on `element-ui` and `ant-design`
 
 ![](https://github.com/ielepro/ele-pro/blob/master/index.png)
-* 预览：http://116.62.121.87:8888/
+* 预览 Preview：http://116.62.121.87:8888/
 
-### 第三方库
-* 图标插件：[viser-vue](https://viserjs.github.io/) 基于ant-v
+### 第三方库 Libs
+* 图表插件 Chart Plugin：[viser-vue](https://viserjs.github.io/) based on ant-v
 
-### 使用
+### 使用 How to use
 * git clone https://github.com/ielepro/ele-pro
 * cd ele-pro
 * npm install
 * npm run serve
 
-### todo
-* 网络请求
-* Mock 数据
+### 特性
+* 漂亮 beautiful：follow Ant Design
+* 最新技术栈 Tech stack：vue 2.5/vue-cli/element-ui
+* 响应式布局 Responsive layout
 
-### 文件说明
+### TodoList
+* request 网络请求
+* Component package 插件化封装
+* mock data
+* top menu 顶部菜单
+* run by Docker
+
+### 文件说明 File description
 
 * browserslistrc 目标浏览器配置表 
 * .editorconfig 代码格式化配置
