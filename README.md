@@ -13,6 +13,10 @@
 * npm install
 * npm run serve
 
+### todo
+* 网络请求
+* Mock 数据
+
 ### 文件说明
 
 * browserslistrc 目标浏览器配置表 
