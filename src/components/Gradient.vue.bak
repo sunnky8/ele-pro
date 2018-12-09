@@ -1,0 +1,71 @@
+<template>
+    <el-row class="gradient">
+        <el-col :span="8" class="icon">
+            <div><i class="el-icon-view icon-color"></i></div>
+        </el-col>
+        <el-col :span="16" class="title-num">
+            <div class="title">{{tag}}</div>
+            <div class="number">{{convert(numValue)}}</div>
+        </el-col>
+    </el-row>
+</template>
+
+<script>
+export default {
+	name: "Gradient",
+	props: {
+		tag: String,
+		value: Number
+	},
+	data() {
+		return {
+			numValue: this.value - 100
+		};
+	},
+	mounted() {
+		var interval = setInterval(() => {
+			if (this.numValue >= this.value) clearInterval(interval);
+			this.numValue = this.numValue + Math.floor(Math.random() * 10 + 1);
+			console.log(this.numValue);
+		}, 50);
+	},
+	methods: {
+		convert(numValue) {
+			var num = (numValue || 0).toString();
+			var result = "";
+			while (num.length > 3) {
+				result = "," + num.slice(-3) + result;
+				num = num.slice(0, num.length - 3);
+			}
+			if (num) {
+				result = num + result;
+			}
+			return result;
+		}
+	}
+};
+</script>
+
+<style lang="scss" scoped>
+.gradient {
+	background-color: #3897ff;
+	width: 20%;
+	// padding: 10px;
+	.icon {
+		// line-height: 80px;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		.icon-color {
+			color: #fff;
+		}
+	}
+	.title-num {
+		padding: 10px;
+		background-color: #fff;
+		.number {
+			font-size: 30px;
+		}
+	}
+}
+</style>
