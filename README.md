@@ -1,6 +1,7 @@
 # ele-pro
 基于[element-ui](https://ant.design/)以及[ant-design](http://element-cn.eleme.io)实现的响应式admin后台
-Responsive admin background based on `element-ui` and `ant-design`
+
+admin based on [element-ui](https://ant.design/) and [ant-design](http://element-cn.eleme.io)
 
 ![](https://github.com/ielepro/ele-pro/blob/master/index.png)
 * 预览 Preview：http://116.62.121.87:8888/
