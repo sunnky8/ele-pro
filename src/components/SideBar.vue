@@ -5,7 +5,7 @@
                 src="https://img.alicdn.com/tfs/TB13UQpnYGYBuNjy0FoXXciBFXa-242-134.png"
                 width="40"
             >
-            <span class="site-name">ADMIN LITE</span>
+            <span v-bind:class="{'hide-site-name': isCollapse, 'site-name': true}">ADMIN LITE</span>
         </div>
         <el-menu
             mode="vertical"
@@ -35,7 +35,7 @@
                             :to="item.path + child.path"
                             :key="child.name"
                         >
-                            <el-menu-item :index="item.path + child.path">
+                            <el-menu-item :index="item.path + child.path" @click="handleClick">
                                 <span v-if="child && child.name" slot="title">{{child.name}}</span>
                             </el-menu-item>
                         </router-link>
@@ -53,12 +53,12 @@ import { asideMenuConfig } from "../__menuConfig__.js";
 export default {
     components: { ScrollBar },
     name: "SideBar",
-    props: {},
+    props: {
+        isCollapse: Boolean
+    },
     data() {
         return {
-            asideMenuConfig,
-            isCollapse: window.innerWidth > 992 ? false : true,
-            myWidth: window.innerWidth 
+            asideMenuConfig
         };
     },
     methods: {
@@ -67,17 +67,10 @@ export default {
         },
         handleClose(key, keyPath) {
             console.log(key, keyPath);
+        },
+        handleClick() {
+            this.$emit('handleClick')
         }
-    },
-    mounted() {
-        window.onresize = () => {
-            this.myWidth = window.innerWidth;
-            if (this.myWidth > 992) {
-                this.isCollapse = false;
-            } else {
-                this.isCollapse = true;
-            }
-        };
     }
 };
 </script>
@@ -98,6 +91,9 @@ export default {
 }
 .site-name {
     margin-left: 10px;
+}
+.hide-site-name{
+    display: none;
 }
 .sidebar-container {
     box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
@@ -137,17 +133,6 @@ export default {
     .el-submenu__title i {
         font-size: 16px;
         color: rgba(255, 255, 255, 0.65);
-    }
-}
-@media only screen and (max-width: 992px) {
-    .sidebar-container {
-        width: 80px !important;
-        .el-submenu .el-menu-item {
-            min-width: 80px !important;
-        }
-    }
-    .site-name{
-        display: none;
     }
 }
 </style>
