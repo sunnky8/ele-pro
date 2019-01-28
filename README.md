@@ -4,7 +4,6 @@
 admin based on [element-ui](https://ant.design/) and [ant-design](http://element-cn.eleme.io)
 
 ![](https://github.com/ielepro/ele-pro/blob/master/index.png)
-* 预览 Preview：http://116.62.121.87:8888/
 
 ### 第三方库 Libs
 * 图表插件 Chart Plugin：[viser-vue](https://viserjs.github.io/) based on ant-v
