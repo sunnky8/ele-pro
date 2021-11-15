@@ -1,7 +1,5 @@
 # ele-pro
 
-##### 预览：http://47.101.221.106
-
 ### 描述
 
 基于[element-ui](https://ant.design/)以及[ant-design](http://element-cn.eleme.io)实现的响应式admin后台
